@@ -12,8 +12,8 @@ BuildRequires:	python
 BuildRequires:	desktop-file-utils
 BuildRequires:	imagemagick
 
-Requires:	aspell-en
-Requires:	espeak 
+Requires:	aspell-dictionary
+Requires:	espeak
 Requires:	imagemagick
 Requires:	packagekit-gtk3-module
 Requires:	poppler
@@ -27,7 +27,6 @@ Requires:	tesseract
 #Suggests:	cuneiform-linux
 
 %description
-# from README.md
 Lios is a free and open source software for converting print in to text
 using either scanner or a camera, It can also produce text out of scanned
 images from other sources such as Pdf, Image, Folder containing Images or
@@ -44,7 +43,7 @@ Features include:
     language)
   · Side by side view of image and output
   · Advanced Scanner Brightness optimizer
-  · Text Reader for low vision with Highlighting, With user selected 
+  · Text Reader for low vision with Highlighting, With user selected
     Color, Font, and Background Color
   · Audio converter(espeak)
   · Spell-checker(aspell)
@@ -69,7 +68,7 @@ Lios is written in python3.
 %setup -q
 
 # fix .desktop file name
-mv share/applications/Lios.desktop share/applications/%{name}.desktop 
+mv share/applications/Lios.desktop share/applications/%{name}.desktop
 sed -i -e 's|Lios.desktop|%{name}.desktop|' setup.py
 
 # fix premissions
@@ -84,8 +83,8 @@ chmod 0644 share/lios/readme
 
 # remove duplicates (by rpm5 point of view) from FILELIST
 # (see http://wiki.rosalab.ru/ru/index.php/Python_policy#Automated_setup)
-sed -i -e '{ /pyc$/d 
-	     /pyo$/d 
+sed -i -e '{ /pyc$/d
+	     /pyo$/d
 	     /copyright$/d
 	   }' FILELIST
 
