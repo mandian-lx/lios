@@ -21,7 +21,7 @@ Requires:	python-gi
 Requires:	python-enchant
 Requires:	python-speechd
 Requires:	python-imaging
-Requires:	python-sane
+#Requires:	python-sane
 Requires:	tesseract
 
 #Suggests:	cuneiform-linux
